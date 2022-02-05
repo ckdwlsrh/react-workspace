@@ -1,6 +1,7 @@
 import React from 'react';
 import Todo from './Todo';
 import './App.css';
+import { List, Paper } from '@material-ui/core';
 
 
 class App extends React.Component{
@@ -14,9 +15,15 @@ class App extends React.Component{
     };
   }
   render() {
-    var todoItems = this.state.items.map((item, idx) =>(
-      <Todo item={item} key={idx} />
-    ));
+    var todoItems = this.state.items.length > 0 && (
+      <Paper style={{margin: 16}}>
+        <List>
+          {this.state.items.map((item, idx) => (
+            <Todo item={item} key={item.id}/>
+          ))}
+        </List>
+      </Paper>
+    );
     return (
       <div className="App">
         {todoItems}
@@ -25,26 +32,4 @@ class App extends React.Component{
   }
 
 }
-/*
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-*/
 export default App;
