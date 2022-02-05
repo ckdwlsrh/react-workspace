@@ -1,6 +1,21 @@
 import logo from './logo.svg';
+import React from 'react';
+import Todo from './Todo';
 import './App.css';
 
+
+class App extends React.Component{
+  render() {
+    return (
+      <div className="App">
+        <Todo />
+        <Todo />
+      </div>
+    );
+  }
+
+}
+/*
 function App() {
   return (
     <div className="App">
@@ -21,5 +36,5 @@ function App() {
     </div>
   );
 }
-
+*/
 export default App;
