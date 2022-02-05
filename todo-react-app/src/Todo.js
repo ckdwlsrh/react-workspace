@@ -1,5 +1,6 @@
 import React from 'react';
-import {ListItem, ListItemText, InputBase, Checkbox } from '@material-ui/core';
+import {ListItem, ListItemText, InputBase, Checkbox, ListItemSecondaryAction, IconButton } from '@material-ui/core';
+import DeleteOutlined from '@material-ui/icons/DeleteOutlined';
 
 class Todo extends React.Component {
     constructor(props) {
@@ -22,7 +23,13 @@ class Todo extends React.Component {
                         fullWidth={true}
                     />
                 </ListItemText>
+                <ListItemSecondaryAction>
+                    <IconButton aria-label='Delete Todo'>
+                        <DeleteOutlined />
+                    </IconButton>
+                </ListItemSecondaryAction>
             </ListItem>
+
         );
     }
 }
