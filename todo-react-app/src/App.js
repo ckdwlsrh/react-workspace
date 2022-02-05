@@ -1,7 +1,8 @@
 import React from 'react';
+import AddTodo from './AddTodo.js';
 import Todo from './Todo';
 import './App.css';
-import { List, Paper } from '@material-ui/core';
+import { Container, List, Paper } from '@material-ui/core';
 
 
 class App extends React.Component{
@@ -26,8 +27,11 @@ class App extends React.Component{
     );
     return (
       <div className="App">
-        {todoItems}
-        </div>
+        <Container maxWidth="md">
+          <AddTodo />
+          <div className='TodoList'>{todoItems}</div>
+        </Container>
+      </div>
     );
   }
 
